@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html 
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+	  <!-- Création template -->
+	<f:view>
+		<h:head>	
+			<h:outputStylesheet name="css/style.css"/>
+			<link rel="stylesheet" type="text/css" 
+				href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	  	</h:head>
+	  	
+	  	<h:body>
+	  		<header class="jumbotron text-center">
+	  			<section class="container">
+	  				<article class="row">
+			  			<h1>		
+				  			<ui:insert name="titre"/>
+				  		</h1>
+				  	</article>	
+			  	</section>	
+	  		</header>
+
+	  		<div class="container">
+			  	<div class="row">	
+			  		<nav class="col-md-12">
+	  						  			
+						<h:form>
+			  				<h:commandButton action="#{routeBean.page}" value="ACCEUIL" >
+			  					<f:param name="pageId" value="index"></f:param>
+			  				 </h:commandButton>		
+						</h:form>
+						<h:form>
+			  				<h:commandButton action="#{routeBean.page}" value="PANIER" >
+			  					<f:param name="pageId" value="panier"></f:param>
+			  				 </h:commandButton>		
+						</h:form>
+						<br/>
+	  		
+	  				</nav>
+	  			</div>
+	  		
+		  		<div class="row">	
+			  		<nav class="col-md-12">
+			  			  		
+				  		<main>
+				  			<ui:insert name="main"/>
+				  		</main>
+					
+					</nav>
+				</div>
+   			<footer class="jumbotron text-center">
+   				<div class="container">
+   					<div class="col-md-12">
+   						<h:outputText value="(c) M2i - formation JSF" />
+   					</div>
+   				</div>
+   			</footer>	
+	  		</div>  
+	  	</h:body>
+	  	
+	</f:view>	  
+</html>

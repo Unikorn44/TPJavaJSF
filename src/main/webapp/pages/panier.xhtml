@@ -1,0 +1,30 @@
+<ui:composition
+	template="../templates/principal.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+   	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+                       
+    <ui:define name="titre">
+    	<h:outputText value="Voici votre panier :" />
+    </ui:define>
+              
+	<ui:define name="main">   
+	    <h:outputText value="Voici votre panier :" />	            
+		<h:form>
+			<ul>
+				 <ui:repeat var="commande" value="#{panierBean.panierPianos}">
+					<li>
+						<h:outputText value="#{commande.pianoBean.nom} " />
+						<h:outputLabel for="quantité" value="Quantité : #{commande.quantite}" />
+						
+					</li>
+		    	</ui:repeat>
+			</ul>
+			<h:commandButton value="Supprimer la commande" action="#{panierBean.supprimerCommande}" />
+			
+		</h:form>
+	</ui:define>
+	              
+</ui:composition>
