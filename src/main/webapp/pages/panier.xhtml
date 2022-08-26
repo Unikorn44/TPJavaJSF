@@ -12,19 +12,28 @@
               
 	<ui:define name="main">   
 	    <h:outputText value="Voici votre panier :" />	            
+		
 		<h:form>
+		
 			<ul>
-				 <ui:repeat var="commande" value="#{panierBean.panierPianos}">
+				 <ui:repeat var="commande" value="#{panierBean.panier}">
 					<li>
-						<h:outputText value="#{commande.pianoBean.nom} " />
-						<h:outputLabel for="quantité" value="Quantité : #{commande.quantite}" />
 						
+						<h:outputText value="#{commande.pianoBean.nom} --  
+											Quantité : #{commande.quantite} -- 
+											Prix : #{commande.pianoBean.prix} € -- 
+											Total : #{panierBean.getPrixCommande(commande)} €  " />
+					
+						<h:commandButton value="Retirer" action="#{panierBean.retirerCommande(commande.pianoBean)}" />
 					</li>
 		    	</ui:repeat>
 			</ul>
+			<h:outputText value="Prix total de la commande : #{panierBean.prixTotalPanier()} €  " />
+			<br/><br/>
 			<h:commandButton value="Supprimer la commande" action="#{panierBean.supprimerCommande}" />
 			
 		</h:form>
+		
 	</ui:define>
 	              
 </ui:composition>

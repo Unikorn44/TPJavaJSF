@@ -12,6 +12,7 @@
 			<h:outputStylesheet name="css/style.css"/>
 			<link rel="stylesheet" type="text/css" 
 				href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+			<f:loadBundle var="bundle" basename="global" />
 	  	</h:head>
 	  	
 	  	<h:body>
@@ -21,7 +22,12 @@
 			  			<h1>		
 				  			<ui:insert name="titre"/>
 				  		</h1>
-				  	</article>	
+				  	</article>
+				  	<article class="row">
+            			<div class="col-sm-12">
+            				<em>#{bundle.greeting}</em>
+            			</div>
+            		</article>	
 			  	</section>	
 	  		</header>
 

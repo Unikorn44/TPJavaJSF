@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -29,6 +28,7 @@ public class DepotBean implements Serializable {
 
 	@PostConstruct
 	public void init() {
+		
 		System.out.println("Passage par le init");
 		this.pianosAVendre = new ArrayList<PianoBean>();
 		

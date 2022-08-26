@@ -10,7 +10,7 @@ public class PianoCommandeBean {
 	
 	public PianoCommandeBean(PianoBean pianoBean, Integer quantite) {
 		this.setPianoBean(pianoBean);
-		this.quantite = quantite;
+		this.setQuantite(quantite);
 	}
 	
 	public PianoBean getPianoBean() {
